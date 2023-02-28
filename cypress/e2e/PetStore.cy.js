@@ -122,13 +122,13 @@ describe('Pet suite', () => {
       method: 'GET',
       failOnStatusCode: false,
      }).then( response => {
+
     expect(response.body.name).to.be.equal(pet.name);
     expect(response.body.category.id).to.be.equal(pet.category.id);
     expect(response.body.category.name).to.be.equal(pet.category.name);
      })
     })
   })
-
   it('Delete pet with id ${pet.id', () => {
     cy.log('Delete pet with id ${pet.id');
     cy.request('DELETE', `/pet/${pet.id}`).then(response2 => {
